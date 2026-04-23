@@ -12,7 +12,7 @@ pipeline{
     stage('Set up VENV'){
       steps{
         sh 'python3 -m venv venv'
-        sh 'pip install --upgrade pip'
+        sh 'venv/bin/python -m pip install --upgrade pip'
         sh 'pip install -r requirements.txt'
       }
     }
