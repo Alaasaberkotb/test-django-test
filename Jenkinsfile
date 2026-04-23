@@ -11,9 +11,9 @@ pipeline{
     }
     stage('Set up VENV'){
       steps{
-        sh 'python3 -m venv %VENV%'
-        sh '%VENV%\\Scripts\\python -m pip install --upgrade pip'
-        sh '%VENV%\\Scripts\\pip install -r requirements.txt'
+        sh 'python3 -m venv ven'
+        sh 'ven/Scripts/pip -m pip install --upgrade pip'
+        sh 'ven/Scripts/pip install -r requirements.txt'
       }
     }
     stage('Run the tests'){
