@@ -11,14 +11,14 @@ pipeline{
     }
     stage('Set up VENV'){
       steps{
-        bat 'python -m venv %VENV%'
-        bat '%VENV%\\Scripts\\python -m pip install --upgrade pip'
-        bat '%VENV%\\Scripts\\pip install -r requirements.txt'
+        sh 'python -m venv %VENV%'
+        sh '%VENV%\\Scripts\\python -m pip install --upgrade pip'
+        sh '%VENV%\\Scripts\\pip install -r requirements.txt'
       }
     }
     stage('Run the tests'){
       steps{
-        bat '%VENV%\\Scripts\\python manage.py test'
+        sh '%VENV%\\Scripts\\python manage.py test'
       }
     }
   }
