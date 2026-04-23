@@ -18,7 +18,7 @@ pipeline{
     }
     stage('Run the tests'){
       steps{
-        sh '%VENV%\\Scripts\\python manage.py test'
+        sh 'venv/bin/python manage.py test'
       }
     }
   }
